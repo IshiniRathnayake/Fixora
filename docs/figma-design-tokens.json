@@ -1,0 +1,34 @@
+{
+  "name": "Fixora Design Tokens",
+  "description": "Import into Figma Variables or use manually — 2521838",
+  "colors": {
+    "bg/primary": "#0B0F14",
+    "bg/surface": "#121820",
+    "bg/elevated": "#1A2330",
+    "border/default": "#2A3544",
+    "text/primary": "#E8EDF4",
+    "text/muted": "#8B9BB0",
+    "brand/accent": "#3D9CF5",
+    "brand/accent-pressed": "#2563A8",
+    "status/success": "#34C759",
+    "status/warning": "#F5A623",
+    "status/danger": "#FF5C5C"
+  },
+  "typography": {
+    "fontFamily/sans": "DM Sans",
+    "fontFamily/mono": "JetBrains Mono",
+    "fontSize/h1": "28",
+    "fontSize/h2": "18",
+    "fontSize/body": "14",
+    "fontSize/caption": "12",
+    "fontSize/label": "11"
+  },
+  "spacing": [4, 8, 12, 16, 24, 32, 48],
+  "radius": {
+    "sm": 8,
+    "md": 12
+  },
+  "frame": {
+    "desktop": { "width": 1440, "height": 900 }
+  }
+}

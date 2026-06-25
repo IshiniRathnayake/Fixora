@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fixora — Enterprise (Figma ref)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="artboard">
+      <span class="figma-label">1440×900 · Enterprise</span>
+      <div class="app-shell">
+        <aside class="sidebar">
+          <div class="brand">Fix<span>ora</span></div>
+          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" href="#">Logs</a>
+          <a class="nav-link" href="#">Ask Fixora</a>
+          <a class="nav-link active" href="#">Enterprise</a>
+          <div class="sidebar-footer">
+            <div>System Administrator</div>
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 12px">Sign out</button>
+          </div>
+        </aside>
+        <main class="main">
+          <h1 class="page-title">Enterprise app</h1>
+          <p class="page-subtitle">Sample ERP orders — processing emits logs monitored by Fixora</p>
+          <div class="panel" style="margin-bottom: 16px">
+            <p class="mono" style="border: none; padding: 0; background: transparent">WARN Slow transaction on order ORD-1002 — lock wait detected</p>
+          </div>
+          <div class="panel">
+            <table class="table">
+              <thead>
+                <tr><th>Ref</th><th>Customer</th><th>Status</th><th>Amount</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ORD-1001</td><td>Acme Corp</td><td><span class="badge badge-success">completed</span></td><td>£1,250.00</td>
+                  <td><button class="btn btn-secondary" style="padding: 6px 14px; font-size: 12px">Process</button></td>
+                </tr>
+                <tr>
+                  <td>ORD-1002</td><td>Beta Ltd</td><td><span class="badge" style="background: rgba(61,156,245,0.2); color: var(--accent)">processing</span></td><td>£890.50</td>
+                  <td><button class="btn btn-secondary" style="padding: 6px 14px; font-size: 12px">Process</button></td>
+                </tr>
+                <tr>
+                  <td>ORD-1003</td><td>Gamma Inc</td><td><span class="badge badge-critical">failed</span></td><td>£320.00</td>
+                  <td><button class="btn btn-secondary" style="padding: 6px 14px; font-size: 12px">Process</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

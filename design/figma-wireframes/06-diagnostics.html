@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fixora — Diagnostics (Figma ref)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="artboard">
+      <span class="figma-label">1440×900 · Diagnostics FR2</span>
+      <div class="app-shell">
+        <aside class="sidebar">
+          <div class="brand">Fix<span>ora</span></div>
+          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" href="#">Alerts</a>
+          <a class="nav-link" href="#">Logs</a>
+          <a class="nav-link" href="#">Ask Fixora</a>
+          <a class="nav-link active" href="#">Diagnostics</a>
+          <div class="sidebar-footer">
+            <div>System Administrator</div>
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 12px">Sign out</button>
+          </div>
+        </aside>
+        <main class="main">
+          <h1 class="page-title">Diagnostics</h1>
+          <p class="page-subtitle">Plain-English root-cause reports from the Analysis Agent</p>
+          <div class="panel">
+            <div style="display: flex; justify-content: space-between; align-items: start">
+              <p style="font-size: 17px; font-weight: 600">Likely deadlock on Orders and Inventory tables</p>
+              <span class="badge badge-high">72% confidence</span>
+            </div>
+            <p style="color: var(--muted); margin-top: 10px; font-size: 14px">
+              Multiple ERROR-level log entries indicate competing write transactions. Pattern consistent with lock wait timeouts during peak usage.
+            </p>
+            <div style="margin-top: 14px; padding: 14px; background: var(--bg); border-radius: 8px; font-size: 14px">
+              <strong>Suggested remediation:</strong> Review transaction isolation level and index configuration on Orders.OrderID. Consider shortening transaction scope.
+            </div>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 10px">20 May 2026, 09:15</p>
+          </div>
+          <div class="panel">
+            <div style="display: flex; justify-content: space-between">
+              <p style="font-size: 17px; font-weight: 600">Connection pool exhaustion</p>
+              <span class="badge badge-high">65% confidence</span>
+            </div>
+            <p style="color: var(--muted); margin-top: 10px; font-size: 14px">
+              ERROR log indicates max_connections reached on API layer following latency spike.
+            </p>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 10px">19 May 2026, 14:30</p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

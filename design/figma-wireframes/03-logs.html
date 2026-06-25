@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fixora — Logs (Figma ref)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="artboard">
+      <span class="figma-label">1440×900 · Logs FR1</span>
+      <div class="app-shell">
+        <aside class="sidebar">
+          <div class="brand">Fix<span>ora</span></div>
+          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" href="#">Alerts</a>
+          <a class="nav-link active" href="#">Logs</a>
+          <a class="nav-link" href="#">Ask Fixora</a>
+          <a class="nav-link" href="#">Diagnostics</a>
+          <a class="nav-link" href="#">Enterprise</a>
+          <div class="sidebar-footer">
+            <div>System Administrator</div>
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 12px">Sign out</button>
+          </div>
+        </aside>
+        <main class="main">
+          <h1 class="page-title">Log monitoring</h1>
+          <p class="page-subtitle">Drain3 parsing · Isolation Forest · multi-agent pipeline</p>
+          <div style="display: flex; gap: 12px; margin-bottom: 20px">
+            <button class="btn btn-secondary">1. Load sample logs</button>
+            <button class="btn btn-primary">2. Run AI analysis pipeline</button>
+          </div>
+          <div class="diagnostic-banner">
+            <div class="panel-title" style="margin-bottom: 8px">Diagnostic (Analysis Agent)</div>
+            <p><strong>Root cause:</strong> Elevated error rate in database transaction logs</p>
+            <p style="color: var(--muted); margin-top: 8px; font-size: 14px">
+              Deadlock pattern detected between write transactions on Orders and Inventory.
+            </p>
+            <p style="margin-top: 10px; font-size: 13px"><strong>Suggested fix:</strong> Shorten transaction scope; review indexes.</p>
+          </div>
+          <div class="panel">
+            <table class="table">
+              <thead>
+                <tr><th>Time</th><th>Level</th><th>Message</th><th>Anomaly</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>09:05:12</td><td>INFO</td><td>Application started successfully</td><td>—</td></tr>
+                <tr class="row-anomaly"><td>09:07:14</td><td>ERROR</td><td>Deadlock found when trying to get lock</td><td>Yes (0.92)</td></tr>
+                <tr class="row-anomaly"><td>09:07:15</td><td>ERROR</td><td>Transaction rollback — lock wait timeout</td><td>Yes (0.88)</td></tr>
+                <tr><td>09:09:00</td><td>INFO</td><td>Scheduled batch job completed</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

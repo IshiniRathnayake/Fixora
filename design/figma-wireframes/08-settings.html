@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fixora — Settings RBAC (Figma ref)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="artboard">
+      <span class="figma-label">1440×900 · Settings FR5</span>
+      <div class="app-shell">
+        <aside class="sidebar">
+          <div class="brand">Fix<span>ora</span></div>
+          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" href="#">Alerts</a>
+          <a class="nav-link" href="#">Logs</a>
+          <a class="nav-link" href="#">Ask Fixora</a>
+          <a class="nav-link active" href="#">Settings</a>
+          <div class="sidebar-footer">
+            <div>System Administrator</div>
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 12px">Sign out</button>
+          </div>
+        </aside>
+        <main class="main">
+          <h1 class="page-title">Settings</h1>
+          <p class="page-subtitle">Role-based access control and account management (FR5)</p>
+          <div class="panel">
+            <div class="panel-title">Your profile</div>
+            <p style="font-size: 14px; margin-bottom: 8px"><span style="color: var(--muted)">Name</span> · System Administrator</p>
+            <p style="font-size: 14px; margin-bottom: 8px"><span style="color: var(--muted)">Email</span> · admin@fixora.local</p>
+            <p style="font-size: 14px"><span style="color: var(--muted)">Role</span> · <span class="badge" style="background: rgba(61,156,245,0.2); color: var(--accent)">Administrator</span></p>
+          </div>
+          <div class="panel">
+            <div class="panel-title">Permissions</div>
+            <table class="table">
+              <tbody>
+                <tr><td>Ingest logs</td><td>✓</td></tr>
+                <tr><td>Run analysis pipeline</td><td>✓</td></tr>
+                <tr><td>Acknowledge alerts</td><td>✓</td></tr>
+                <tr><td>Natural language queries</td><td>✓</td></tr>
+                <tr><td>View dashboard</td><td>✓</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel">
+            <div class="panel-title">Users (administrator only)</div>
+            <table class="table">
+              <thead><tr><th>Email</th><th>Role</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>admin@fixora.local</td><td>Administrator</td><td>Active</td></tr>
+                <tr><td>viewer@fixora.local</td><td>Viewer</td><td>Active</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fixora — Ask Fixora (Figma ref)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="artboard">
+      <span class="figma-label">1440×900 · NL Query FR2+FR3</span>
+      <div class="app-shell">
+        <aside class="sidebar">
+          <div class="brand">Fix<span>ora</span></div>
+          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link" href="#">Alerts</a>
+          <a class="nav-link" href="#">Logs</a>
+          <a class="nav-link active" href="#">Ask Fixora</a>
+          <a class="nav-link" href="#">Diagnostics</a>
+          <div class="sidebar-footer">
+            <div>Business Viewer</div>
+            <div style="text-transform: capitalize">viewer</div>
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 12px">Sign out</button>
+          </div>
+        </aside>
+        <main class="main">
+          <h1 class="page-title">Ask Fixora</h1>
+          <p class="page-subtitle">Natural language queries and full diagnostic pipeline</p>
+          <div class="panel" style="margin-bottom: 16px">
+            <label style="margin-right: 20px; font-size: 14px">◉ Full diagnostic (logs + NL)</label>
+            <label style="font-size: 14px; color: var(--muted)">○ Data query only</label>
+          </div>
+          <div class="panel">
+            <textarea class="textarea">What caused the database slowdown in the last hour?</textarea>
+            <div class="chips">
+              <span class="chip">What caused the database slowdown…</span>
+              <span class="chip">Show me all failed orders</span>
+              <span class="chip">Zero inventory items</span>
+            </div>
+            <button class="btn btn-primary">Run full diagnostic</button>
+          </div>
+          <div class="diagnostic-banner" style="margin-top: 16px">
+            <div class="panel-title">AI diagnosis</div>
+            <p style="font-weight: 600">Likely deadlock between Orders and Inventory writes</p>
+            <p style="color: var(--muted); font-size: 14px; margin-top: 6px">Detected at 09:07–13 during peak transaction load.</p>
+            <p style="font-size: 13px; margin-top: 8px"><strong>Remediation:</strong> Review isolation level on Orders table.</p>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 8px">Pipeline completed in 1,240 ms</p>
+          </div>
+          <div class="panel">
+            <div class="panel-title">Generated SQL</div>
+            <pre class="mono">SELECT id, order_ref, status, total_amount
+FROM orders
+WHERE status = 'failed'
+ORDER BY created_at DESC
+LIMIT 20;</pre>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 8px">Valid · 3 rows · 412 ms</p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

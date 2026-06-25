@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fixora — Dashboard (Figma ref)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="artboard">
+      <span class="figma-label">1440×900 · Dashboard FR4</span>
+      <div class="app-shell">
+        <aside class="sidebar">
+          <div class="brand">Fix<span>ora</span></div>
+          <a class="nav-link active" href="#">Dashboard</a>
+          <a class="nav-link" href="#">Alerts</a>
+          <a class="nav-link" href="#">Logs</a>
+          <a class="nav-link" href="#">Ask Fixora</a>
+          <a class="nav-link" href="#">Diagnostics</a>
+          <a class="nav-link" href="#">Enterprise</a>
+          <a class="nav-link" href="#">Settings</a>
+          <div class="sidebar-footer">
+            <div>System Administrator</div>
+            <div style="text-transform: capitalize">administrator</div>
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 12px">Sign out</button>
+          </div>
+        </aside>
+        <main class="main">
+          <div class="page-header">
+            <h1 class="page-title">System health</h1>
+            <button class="btn btn-secondary">Refresh</button>
+          </div>
+          <p class="page-subtitle">Unified view of agents, alerts, and diagnostics</p>
+          <div class="card-grid">
+            <div class="card"><div class="card-label">Health score</div><div class="card-value">84</div></div>
+            <div class="card"><div class="card-label">Open alerts</div><div class="card-value">3</div></div>
+            <div class="card"><div class="card-label">Anomalies (24h)</div><div class="card-value">7</div></div>
+            <div class="card"><div class="card-label">Avg query latency</div><div class="card-value" style="font-size: 28px">420ms</div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-title">Recent diagnostics</div>
+            <p style="font-weight: 600; margin-bottom: 6px">Likely deadlock on Orders and Inventory tables</p>
+            <p style="color: var(--muted); font-size: 14px; margin-bottom: 8px">
+              Multiple ERROR-level entries suggest write contention between competing transactions at 09:07.
+            </p>
+            <p style="font-size: 13px"><strong>Fix:</strong> Review isolation level and indexes on Orders.OrderID.</p>
+          </div>
+          <div class="two-col">
+            <div class="panel">
+              <div class="panel-title">Recent alerts</div>
+              <p style="margin-bottom: 8px"><span class="badge badge-critical">critical</span> Anomaly detected: ERROR</p>
+              <p style="margin-bottom: 8px"><span class="badge badge-high">high</span> Anomaly detected: WARN</p>
+            </div>
+            <div class="panel">
+              <div class="panel-title">Agent activity</div>
+              <table class="table">
+                <thead><tr><th>Agent</th><th>Status</th><th>Duration</th></tr></thead>
+                <tbody>
+                  <tr><td>monitoring</td><td>completed</td><td>124 ms</td></tr>
+                  <tr><td>analysis</td><td>completed</td><td>890 ms</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

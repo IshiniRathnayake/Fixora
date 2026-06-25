@@ -1,0 +1,15 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+dist/
+.DS_Store
+*.log
+.idea/
+.vscode/
+mysql_data/
+backend/data/fixora.db
+backend/data/*.db

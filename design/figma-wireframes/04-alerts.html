@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fixora — Alerts (Figma ref)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="artboard">
+      <span class="figma-label">1440×900 · Alerts</span>
+      <div class="app-shell">
+        <aside class="sidebar">
+          <div class="brand">Fix<span>ora</span></div>
+          <a class="nav-link" href="#">Dashboard</a>
+          <a class="nav-link active" href="#">Alerts</a>
+          <a class="nav-link" href="#">Logs</a>
+          <a class="nav-link" href="#">Ask Fixora</a>
+          <a class="nav-link" href="#">Diagnostics</a>
+          <div class="sidebar-footer">
+            <div>System Administrator</div>
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 12px">Sign out</button>
+          </div>
+        </aside>
+        <main class="main">
+          <h1 class="page-title">Alerts</h1>
+          <p class="page-subtitle">Contextualised alerts from the Monitoring Agent</p>
+          <div class="panel">
+            <table class="table">
+              <thead>
+                <tr><th>Severity</th><th>Title</th><th>Summary</th><th>Status</th><th>Detected</th><th></th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge badge-critical">critical</span></td>
+                  <td>Anomaly detected: ERROR</td>
+                  <td>Deadlock found when trying to get lock…</td>
+                  <td>open</td>
+                  <td>20 May 09:07</td>
+                  <td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px">Ack</button></td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-high">high</span></td>
+                  <td>Anomaly detected: WARN</td>
+                  <td>Elevated latency on /api/orders p95=2100ms</td>
+                  <td>open</td>
+                  <td>20 May 09:08</td>
+                  <td><button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px">Ack</button></td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-high">high</span></td>
+                  <td>Anomaly detected: ERROR</td>
+                  <td>Connection pool exhausted</td>
+                  <td>acknowledged</td>
+                  <td>19 May 14:22</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
