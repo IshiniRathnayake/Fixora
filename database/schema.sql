@@ -143,6 +143,28 @@ CREATE TABLE health_metrics (
     INDEX idx_metric_time (metric_name, recorded_at)
 );
 
+-- Office support tickets (employee issue resolution)
+CREATE TABLE support_tickets (
+    id                   INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    requester_id         INT UNSIGNED,
+    title                VARCHAR(255) NOT NULL,
+    description          TEXT NOT NULL,
+    category             VARCHAR(64) DEFAULT 'general',
+    priority             VARCHAR(16) DEFAULT 'medium',
+    status               VARCHAR(16) DEFAULT 'open',
+    source               VARCHAR(32) DEFAULT 'web',
+    page_url             VARCHAR(512),
+    ai_summary           TEXT,
+    suggested_resolution TEXT,
+    model_confidence     FLOAT,
+    assigned_team        VARCHAR(128),
+    agent_trace_json     JSON,
+    created_at           TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at           TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    resolved_at          TIMESTAMP NULL,
+    FOREIGN KEY (requester_id) REFERENCES users(id)
+);
+
 -- Administrator: run scripts/seed_admin.py after schema load (password: admin123)
 
 INSERT INTO orders (order_ref, customer_name, status, total_amount) VALUES

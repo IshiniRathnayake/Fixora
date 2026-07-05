@@ -136,3 +136,25 @@ class Inventory(Base):
     product_name: Mapped[str] = mapped_column(String(128), nullable=False)
     quantity: Mapped[int] = mapped_column(Integer, default=0)
     updated_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+
+
+class SupportTicket(Base):
+    __tablename__ = "support_tickets"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    requester_id: Mapped[Optional[int]] = mapped_column(ForeignKey("users.id"))
+    title: Mapped[str] = mapped_column(String(255), nullable=False)
+    description: Mapped[str] = mapped_column(Text, nullable=False)
+    category: Mapped[str] = mapped_column(String(64), default="general")
+    priority: Mapped[str] = mapped_column(String(16), default="medium")
+    status: Mapped[str] = mapped_column(String(16), default="open")
+    source: Mapped[str] = mapped_column(String(32), default="web")
+    page_url: Mapped[Optional[str]] = mapped_column(String(512))
+    ai_summary: Mapped[Optional[str]] = mapped_column(Text)
+    suggested_resolution: Mapped[Optional[str]] = mapped_column(Text)
+    model_confidence: Mapped[Optional[float]] = mapped_column(Float)
+    assigned_team: Mapped[Optional[str]] = mapped_column(String(128))
+    agent_trace_json: Mapped[Optional[dict]] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    updated_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now(), onupdate=func.now())
+    resolved_at: Mapped[Optional[datetime]] = mapped_column(DateTime)

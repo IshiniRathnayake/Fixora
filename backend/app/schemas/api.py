@@ -79,3 +79,55 @@ class NLQueryResponse(BaseModel):
 class PipelineRequest(BaseModel):
     logs: list[dict[str, Any]] = Field(default_factory=list)
     question: Optional[str] = None
+
+
+class IssueAnalyzeRequest(BaseModel):
+    description: str = Field(..., min_length=5, max_length=4000)
+    source: str = Field(default="web", pattern="^(web|extension)$")
+    page_url: Optional[str] = Field(default=None, max_length=512)
+    page_title: Optional[str] = Field(default=None, max_length=255)
+    page_error: Optional[str] = Field(default=None, max_length=2000)
+    browser: Optional[str] = Field(default=None, max_length=128)
+    os_info: Optional[str] = Field(default=None, max_length=128)
+    selected_text: Optional[str] = Field(default=None, max_length=2000)
+
+
+class IssueAnalyzeResponse(BaseModel):
+    resolution: dict[str, Any]
+    category: str
+    priority: str
+    confidence: float
+    can_self_resolve: bool
+    knowledge_used: list[dict[str, Any]]
+    escalation: dict[str, Any]
+    ticket: Optional[dict[str, Any]] = None
+    workflow: dict[str, Any]
+
+
+class SupportTicketOut(BaseModel):
+    id: int
+    title: str
+    description: str
+    category: str
+    priority: str
+    status: str
+    source: str
+    page_url: Optional[str]
+    ai_summary: Optional[str]
+    suggested_resolution: Optional[str]
+    model_confidence: Optional[float]
+    assigned_team: Optional[str]
+    created_at: datetime
+
+    model_config = {"from_attributes": True}
+
+
+class TicketStatusUpdate(BaseModel):
+    status: str = Field(..., pattern="^(open|in_progress|resolved|closed)$")
+
+
+class ResolutionFeedback(BaseModel):
+    ticket_id: Optional[int] = None
+    was_helpful: bool
+    resolved_without_it: bool
+    feedback_text: Optional[str] = Field(default=None, max_length=1000)
