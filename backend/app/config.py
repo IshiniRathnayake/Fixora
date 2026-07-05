@@ -4,10 +4,15 @@ from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 _BACKEND_ROOT = Path(__file__).resolve().parents[1]
+_PROJECT_ROOT = _BACKEND_ROOT.parent
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=str(_PROJECT_ROOT / ".env"),
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
     mysql_host: str = "localhost"
     mysql_port: int = 3306
@@ -24,7 +29,14 @@ class Settings(BaseSettings):
     xai_model: str = "grok-2-latest"
     xai_base_url: str = "https://api.x.ai/v1"
 
-    cors_origins: str = "http://localhost:5173,http://localhost:3000"
+    groq_api_key: str = ""
+    groq_model: str = "llama-3.3-70b-versatile"
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+
+    gemini_api_key: str = ""
+    gemini_model: str = "gemini-2.5-flash"
+
+    cors_origins: str = "http://localhost:5173,http://localhost:3000,chrome-extension://*"
 
     log_batch_size: int = 500
     anomaly_contamination: float = 0.05
