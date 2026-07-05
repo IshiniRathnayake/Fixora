@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fixora Support</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Fix<span>ora</span></div>
+    <div class="subtitle">Office IT Support</div>
+  </header>
+
+  <section id="login-section" class="section">
+    <label for="email">Work email</label>
+    <input id="email" type="email" placeholder="admin@fixora.local" />
+    <label for="password">Password</label>
+    <input id="password" type="password" placeholder="admin123" />
+    <button id="login-btn" class="btn primary">Sign in</button>
+    <p id="login-error" class="error hidden"></p>
+  </section>
+
+  <section id="main-section" class="section hidden">
+    <div id="page-context" class="context-box"></div>
+    <label for="issue">What went wrong?</label>
+    <textarea id="issue" rows="4" placeholder="Describe the problem in plain English…"></textarea>
+    <button id="analyze-btn" class="btn primary">Analyze with AI Agents</button>
+    <button id="logout-btn" class="btn ghost">Sign out</button>
+  </section>
+
+  <section id="result-section" class="section hidden">
+    <div id="result-summary" class="result-box"></div>
+    <ol id="result-steps"></ol>
+    <div id="result-meta" class="meta"></div>
+    <div id="ticket-info" class="ticket-box hidden"></div>
+    <details id="agent-details">
+      <summary>Agent workflow</summary>
+      <ul id="agent-list"></ul>
+    </details>
+    <button id="back-btn" class="btn ghost">Ask another question</button>
+  </section>
+
+  <section id="loading-section" class="section hidden">
+    <div class="spinner"></div>
+    <p>Running multi-agent analysis…</p>
+    <p class="hint">Intake → Parallel analysis → Resolution → Escalation</p>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
