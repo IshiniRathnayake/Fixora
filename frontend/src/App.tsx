@@ -9,6 +9,8 @@ import LoginPage from "./pages/LoginPage";
 import LogsPage from "./pages/LogsPage";
 import QueryPage from "./pages/QueryPage";
 import SettingsPage from "./pages/SettingsPage";
+import SupportPage from "./pages/SupportPage";
+import TicketsPage from "./pages/TicketsPage";
 
 function Protected({ children }: { children: React.ReactNode }) {
   const { token } = useAuth();
@@ -32,6 +34,8 @@ export default function App() {
                 <Route path="/query" element={<QueryPage />} />
                 <Route path="/diagnostics" element={<DiagnosticsPage />} />
                 <Route path="/enterprise" element={<EnterprisePage />} />
+                <Route path="/support" element={<SupportPage />} />
+                <Route path="/tickets" element={<TicketsPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
               </Routes>
             </Layout>

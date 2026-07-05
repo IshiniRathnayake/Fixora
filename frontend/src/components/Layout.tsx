@@ -20,6 +20,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <NavLink to="/logs" className="nav-link">
             Logs
           </NavLink>
+          <NavLink to="/support" className="nav-link">
+            Get Help
+          </NavLink>
+          <NavLink to="/tickets" className="nav-link">
+            Tickets
+          </NavLink>
           <NavLink to="/query" className="nav-link">
             Ask Fixora
           </NavLink>
