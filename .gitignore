@@ -13,3 +13,6 @@ dist/
 mysql_data/
 backend/data/fixora.db
 backend/data/*.db
+# stray nested data dir created by some run configs
+backend/backend/
+*.db
