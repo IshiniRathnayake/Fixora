@@ -67,3 +67,27 @@ def require_admin(user: Annotated[User, Depends(get_current_user)]) -> User:
 CurrentUser = Annotated[User, Depends(get_current_user)]
 AdminUser = Annotated[User, Depends(require_admin)]
 DbSession = Annotated[Session, Depends(get_db)]
+
+
+def get_optional_user(
+    token: Annotated[str | None, Depends(OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login", auto_error=False))],
+    db: Annotated[Session, Depends(get_db)],
+) -> User | None:
+    if not token:
+        return None
+    try:
+        payload = jwt.decode(token, settings.secret_key, algorithms=["HS256"])
+        email: str | None = payload.get("sub")
+        if not email:
+            return None
+    except JWTError:
+        return None
+    return (
+        db.query(User)
+        .options(joinedload(User.role))
+        .filter(User.email == email, User.is_active.is_(True))
+        .first()
+    )
+
+
+OptionalUser = Annotated[User | None, Depends(get_optional_user)]
